@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schemax Tech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo-section">
+        <h1>Schemax Tech</h1>
+        <img src="images.png" alt="Logo">
+      </div>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="container">
+      <h2>Welcome to My Awesome Website</h2>
+      <p>We build amazing digital experiences for your business.</p>
+      <button id="get-started">Get Started</button>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-box">
+        <div class="service">
+          <h3>Web Design</h3>
+          <p>Creative and responsive web design solutions tailored for your needs.</p>
+        </div>
+        <div class="service">
+          <h3>Development</h3>
+          <p>We build robust and scalable websites and web apps with modern technologies.</p>
+        </div>
+        <div class="service">
+          <h3>SEO</h3>
+          <p>Optimize your website to rank higher on search engines and attract more visitors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a team of passionate developers and designers committed to delivering top-notch web solutions to help businesses grow in the digital world.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have a project in mind? Let's talk!</p>
+      <input type="text" id="message" placeholder="Enter your message">
+      <button id="send-message">Send Message</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MyBrand. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("get-started").addEventListener("click", function() {
+      document.getElementById("message").scrollIntoView({
+        behavior: "smooth"
+      });
+      document.getElementById("message").focus();
+    });
+
+    document.getElementById("send-message").addEventListener("click", function() {
+      const message = document.getElementById("message").value;
+      if (message.trim() === "") {
+        alert("Please enter a message before sending.");
+        return;
+      }
+      alert("Your message: " + message + " has been sent successfully!");
+    });
+
+    document.querySelectorAll("nav a").forEach(anchor => {
+      anchor.addEventListener("click", function(event) {
+        event.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        document.getElementById(targetId).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+  document.querySelector("nav").classList.toggle("active");
+});
+
+  </script>
+
+</body>
+
+</html>
